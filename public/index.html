@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>QR Code Generator</h1>
+      <p class="subtitle">Convert any URL into a QR code</p>
+      
+      <form id="qrForm">
+        <div class="form-group">
+          <label for="urlInput">Enter URL:</label>
+          <input 
+            type="url" 
+            id="urlInput" 
+            placeholder="https://example.com"
+            required
+          >
+        </div>
+        <button type="submit" class="btn">Generate QR Code</button>
+      </form>
+
+      <div id="result" class="result hidden">
+        <div class="qr-container">
+          <img id="qrImage" src="" alt="Generated QR Code">
+        </div>
+        <button id="downloadBtn" class="btn btn-secondary">Download QR Code</button>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Generating QR code...</p>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+      
+      <footer class="footer">
+        <p>Created by <strong>FIZA</strong></p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
