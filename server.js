@@ -1,6 +1,5 @@
 import express from "express";
 import qr from "qr-image";
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -25,9 +24,6 @@ app.post("/api/generate-qr", (req, res) => {
   }
 
   try {
-    // Save URL to file
-    fs.writeFileSync("URL.txt", url);
-
     // Generate QR code as PNG
     const qr_image = qr.image(url, { type: "png" });
     
@@ -38,6 +34,9 @@ app.post("/api/generate-qr", (req, res) => {
       const buffer = Buffer.concat(chunks);
       const base64 = buffer.toString("base64");
       res.json({ success: true, qrCode: `data:image/png;base64,${base64}` });
+    });
+    qr_image.on("error", (err) => {
+      res.status(500).json({ error: "Failed to generate QR code" });
     });
   } catch (err) {
     res.status(500).json({ error: "Failed to generate QR code" });
