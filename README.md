@@ -2,6 +2,10 @@
 
 A simple and elegant QR code generator web application built with Node.js and Express.
 
+## Live Demo
+
+🌐 [https://qr-generator-git-main-fizas-projects-20c03272.vercel.app/](https://qr-generator-git-main-fizas-projects-20c03272.vercel.app/)
+
 ## Features
 
 - 🎯 **Simple Interface** - Clean, intuitive web-based UI
@@ -62,10 +66,6 @@ http://localhost:3001
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **QR Generation**: qr-image library
 
-## Author
 
-FIZA
+Made By FIZA
 
-## License
-
-ISC
